@@ -34,10 +34,10 @@ public enum NSCalculationError : UInt {
     case DivideByZero
 }
 
-public var NSDecimalMaxSize: Int32 { NSUnimplemented() }
+public var NSDecimalMaxSize: Int32 = 8
 // Give a precision of at least 38 decimal digits, 128 binary positions.
 
-public var NSDecimalNoScale: Int32 { NSUnimplemented() }
+public var NSDecimalNoScale: Int32 = 0x7FFF // SHRT_MAX
 
 public struct NSDecimal {
     public var _exponent: Int32
@@ -46,8 +46,6 @@ public struct NSDecimal {
     public var _isCompact: UInt32
     public var _reserved: UInt32
     public var _mantissa: (UInt16, UInt16, UInt16, UInt16, UInt16, UInt16, UInt16, UInt16)
-    public init() { NSUnimplemented() }
-    public init(_exponent: Int32, _length: UInt32, _isNegative: UInt32, _isCompact: UInt32, _reserved: UInt32, _mantissa: (UInt16, UInt16, UInt16, UInt16, UInt16, UInt16, UInt16, UInt16)){ NSUnimplemented() }
 }
 
 public func NSDecimalIsNotANumber(dcm: UnsafePointer<NSDecimal>) -> Bool { NSUnimplemented() }
